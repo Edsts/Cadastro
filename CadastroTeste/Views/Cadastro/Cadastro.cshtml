@@ -1,0 +1,33 @@
+﻿@model CadastroTeste.Models.UsuarioViewModel
+@{
+    <h1> Cadastrar novo usuário </h1>
+    @using (Html.BeginForm("Cadastro", "Cadastro", FormMethod.Post))
+    {
+        <label for="nomeCompleto">Nome Completo:</label>
+        <br>
+        <input type="text" id="nome" name="nome" class="form-control" value="@Model?.Nome">
+        <br>
+        @Html.ValidationMessageFor(model => model.Nome, "",  new { @class = "text-danger" })
+        <br>
+        <label for="email">Email:</label>
+        <br>
+        <input type="email" id="email" name="email" class="form-control" value="@Model?.Email">
+        <br>
+        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        <br>
+        <label for="telefone">Telefone:</label>
+        <br>
+        <input type="tel" id="telefone" name="telefone" class="form-control" value="@Model?.Telefone">
+        <br>
+        @Html.ValidationMessageFor(model => model.Telefone, "",   new { @class = "text-danger" })
+        <br>
+        <label for="senha">Senha:</label>
+        <br>
+        <input type="password" id="senha" name="senha" class="form-control" value="@Model?.Senha">
+        <br>
+        @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+        <br>
+        <br>
+        <input type="submit" class="btn btn-info" value="Enviar dados" />
+    }
+}

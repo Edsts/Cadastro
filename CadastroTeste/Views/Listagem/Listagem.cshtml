@@ -1,0 +1,40 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model List<CadastroTeste.Models.UsuarioViewModel>
+@{
+    <h1> Listagem de usuários cadastrados </h1>
+    <table class="table table-striped">
+        <thead>
+        <th> Nome completo</th>
+        <th> Email</th>
+        <th> Telefone </th>
+        <th> Senha atual</th>
+        <th> Editar </th>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)<br />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)<br />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefone)<br />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Senha)<br />
+                </td>
+                <td>
+                    <a href="/edicao/usuario/@item.Id"><input type="button" value="Editar" class="btn btn-info"/></a>
+                </td>
+            </tr>
+
+            }
+        </tbody>
+    </table>
+
+}
